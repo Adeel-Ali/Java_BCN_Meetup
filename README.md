@@ -106,14 +106,14 @@ The singleton instance of the ``` SimpleCalculatorController ``` class can be ac
 SimpleCalculatorController simpleCalculator = client.getSimpleCalculator();
 ```
 
-### <a name="get_calculate_async"></a>![Method: ](https://apidocs.io/img/method.png "m39.m81.m213.m129.controllers.SimpleCalculatorController.getCalculateAsync") getCalculateAsync
+### <a name="get_calculate_ep_async"></a>![Method: ](https://apidocs.io/img/method.png "m39.m81.m213.m129.controllers.SimpleCalculatorController.getCalculateEPAsync") getCalculateEPAsync
 
 > Calculates the expression using the specified operation.
 
 
 ```java
-void getCalculateAsync(
-        final GetCalculateInput input,
+void getCalculateEPAsync(
+        final GetCalculateEPInput input,
         final APICallBack<Double> callBack)
 ```
 
@@ -129,7 +129,7 @@ void getCalculateAsync(
 #### Example Usage
 
 ```java
-GetCalculateInput collect = new GetCalculateInput();
+GetCalculateEPInput collect = new GetCalculateEPInput();
 
 OperationTypeEnum operation = OperationTypeEnum.fromString("MULTIPLY");
 collect.setOperation(operation);
@@ -141,7 +141,7 @@ double y = 5;
 collect.setY(y);
 
 // Invoking the API call with sample inputs
-simpleCalculator.getCalculateAsync(collect, new APICallBack<Double>() {
+simpleCalculator.getCalculateEPAsync(collect, new APICallBack<Double>() {
     public void onSuccess(HttpContext context, Double response) {
         // TODO success callback handler
     }

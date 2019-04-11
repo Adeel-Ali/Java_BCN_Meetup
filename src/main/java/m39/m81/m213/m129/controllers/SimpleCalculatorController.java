@@ -42,14 +42,14 @@ public class SimpleCalculatorController extends BaseController {
 
     /**
      * Calculates the expression using the specified operation.
-     * @param    GetCalculateInput    Object containing request parameters
+     * @param    GetCalculateEPInput    Object containing request parameters
      * @return    Returns the Double response from the API call 
      */
-    public Double getCalculate(
-                final GetCalculateInput input
+    public Double getCalculateEP(
+                final GetCalculateEPInput input
     ) throws Throwable {
         APICallBackCatcher<Double> callback = new APICallBackCatcher<Double>();
-        getCalculateAsync(input, callback);
+        getCalculateEPAsync(input, callback);
         if(!callback.isSuccess()) {
             throw callback.getError();
         }
@@ -58,11 +58,11 @@ public class SimpleCalculatorController extends BaseController {
 
     /**
      * Calculates the expression using the specified operation.
-     * @param    GetCalculateInput    Object containing request parameters
+     * @param    GetCalculateEPInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void getCalculateAsync(
-                final GetCalculateInput input,
+    public void getCalculateEPAsync(
+                final GetCalculateEPInput input,
                 final APICallBack<Double> callBack
     ) {
         Runnable _responseTask = new Runnable() {
