@@ -106,14 +106,14 @@ The singleton instance of the ``` SimpleCalculatorController ``` class can be ac
 SimpleCalculatorController simpleCalculator = client.getSimpleCalculator();
 ```
 
-### <a name="get_calculate_op_async"></a>![Method: ](https://apidocs.io/img/method.png "m39.m81.m213.m129.controllers.SimpleCalculatorController.getCalculateOpAsync") getCalculateOpAsync
+### <a name="get_calculate_opp_async"></a>![Method: ](https://apidocs.io/img/method.png "m39.m81.m213.m129.controllers.SimpleCalculatorController.getCalculateOppAsync") getCalculateOppAsync
 
-> Calculates the expression using the specified operation.
+> Calculates the expression using the specified operation
 
 
 ```java
-void getCalculateOpAsync(
-        final GetCalculateOpInput input,
+void getCalculateOppAsync(
+        final GetCalculateOppInput input,
         final APICallBack<Double> callBack)
 ```
 
@@ -129,7 +129,7 @@ void getCalculateOpAsync(
 #### Example Usage
 
 ```java
-GetCalculateOpInput collect = new GetCalculateOpInput();
+GetCalculateOppInput collect = new GetCalculateOppInput();
 
 OperationTypeEnum operation = OperationTypeEnum.fromString("MULTIPLY");
 collect.setOperation(operation);
@@ -141,7 +141,7 @@ double y = 5;
 collect.setY(y);
 
 // Invoking the API call with sample inputs
-simpleCalculator.getCalculateOpAsync(collect, new APICallBack<Double>() {
+simpleCalculator.getCalculateOppAsync(collect, new APICallBack<Double>() {
     public void onSuccess(HttpContext context, Double response) {
         // TODO success callback handler
     }
